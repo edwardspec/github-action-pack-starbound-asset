@@ -1,0 +1,12 @@
+name: Test action
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  test-action:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Call the "pack the mod" action
+        uses: ./
+

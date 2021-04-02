@@ -1,0 +1,12 @@
+name: 'Create .pak file'
+description: 'Packs the Starbound mod into .pak file. (later you can, for example, attach this .pak file to GitHub release as asset)'
+inputs:
+  outputFilename:
+    description: 'What filename should the resulting .pak file have, e.g. "NameOfMyMod.pak".'
+    required: true
+    default: "mod.pak"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.outputFilename }}
